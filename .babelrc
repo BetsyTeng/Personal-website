@@ -1,0 +1,17 @@
+{
+    "presets": [
+        "react",
+        "es2015",
+        "stage-2"
+    ],
+    "plugins": [
+        "babel-plugin-dynamic-import-webpack",
+        "transform-decorators-legacy"
+        // ["import",
+        //      {
+        //         "libraryName": "antd-mobile",
+        //         "libraryDirectory": "lib",
+        //         "style": "css"
+        //     }]
+    ]
+}

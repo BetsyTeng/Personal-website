@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack --config ./config/webpack.dev.js ",
     "build": "webpack --config ./config/webpack.production.js",
-    "build:server":"node ./src/server --exec babel-node --presets es2015,stage-2 --env.PORT 3000 ",
+    "build:server": "node ./src/server --env PORT=3000",
     "test": "eslint * --fix"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "autoprefixer": "^8.4.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-webpack": "^1.0.2",
     "babel-plugin-import": "^1.7.0",
@@ -44,13 +45,21 @@
     "webpack-hot-middleware": "^2.22.1"
   },
   "dependencies": {
+    "babel-register": "^6.26.0",
     "compression": "^1.7.2",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
     "html-minifier": "^3.5.15",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-intl": "^2.4.0",
+    "react-loadable": "^5.4.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
     "react-router-redux": "^4.0.8",
-    "react-tap-event-plugin": "^3.0.2"
+    "react-tap-event-plugin": "^3.0.2",
+    "redux": "^4.0.0",
+    "redux-actions": "^2.3.2",
+    "redux-thunk": "^2.2.0"
   }
 }

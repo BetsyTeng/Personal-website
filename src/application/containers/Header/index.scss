@@ -1,0 +1,28 @@
+.wel {}
+
+.font {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.icon-glyph {}
+
+:global {
+    .am-navbar {
+        .icon-shopping-cart:before {
+            color: inherit;
+        }
+    }
+    .am-navbar-light {
+        background-color: #fff;
+        color: #000;
+    }
+    .am-navbar-dark {
+        background-color: #292929;
+        color: #fff;
+    }
+    .am-navbar-transparency {
+        background-color: rgba(255, 255, 255, 0);
+        color: #fff;
+    }
+}

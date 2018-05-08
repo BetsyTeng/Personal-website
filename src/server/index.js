@@ -1,5 +1,7 @@
 // import express from 'express'
 // import server from './server'
+require('babel-register');
+
 const express = require('express');
 const server = require('./server');
 if (module.hot) {
@@ -9,7 +11,7 @@ if (module.hot) {
 
 module.exports = express()
 	.use((request, response) => server.handle(request, response))
-	.listen(3000, (error) => {
+	.listen(3030, (error) => {
 		if (error) {
 			console.error(error)
 			return

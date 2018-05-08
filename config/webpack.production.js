@@ -12,12 +12,10 @@ const config = require("./index");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const baseConfig = require('./webpack.base');
-
-export default {
+const webpackConfigProduction =  {
     ...baseConfig,
     devtool:false,
     entry:[
-        'babel-polyfill',
         `${config.client}/app.js`,
     ],
     output:{
@@ -54,3 +52,4 @@ export default {
     // https://github.com/chentsulin/webpack-target-electron-renderer#how-this-module-works
     target:'electron-renderer'
 }
+module.exports = webpackConfigProduction;

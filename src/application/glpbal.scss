@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'sell-icon';
+    src: url('./static/fonts/sell-icon.svg?407rlp#sell-icon') format('svg'), 
+    url('./static/fonts/sell-icon.eot?407rlp') format('embedded-opentype'),
+    url('./static/fonts/sell-icon.ttf?407rlp') format('truetype'),
+    url('./static/fonts/sell-icon.woff?407rlp') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+:global{
+    @import './static/icon-glyph';
+    @import './static/variables';
+    .icon-glyph{
+        font-size: 12px;
+        // color: #c1c1c1;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+        font-size: $fontSize;
+        line-height: $fontSize;
+    }
+    *,::before,::after{
+        box-sizing: border-box;
+    }
+    body{
+        background: $background-color;
+        color: $text-color;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    input{
+        display: block;
+        width: 100%;
+        padding: 8px;
+        -webkit-appearance: none;
+    }
+}

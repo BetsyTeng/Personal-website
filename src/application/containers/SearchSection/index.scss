@@ -1,0 +1,84 @@
+.search-section{
+    position: absolute;
+}
+.inf-search-write{
+    margin-top:45px;
+    padding: 15px 0 5px;
+}
+.container{
+    position: relative;
+}
+#inf-search-clear{
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+    color: #9f9f9f;
+}
+.closeClass{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.search-labels-wrapper{
+    position: relative;
+    width:100%;
+    display: inline-block;
+    margin-top: 30px;
+}
+.inf-search-write form input{
+    border-bottom: 1px solid #ccc;
+    padding-right: 70px;
+    padding-left: 10px !important;
+}
+.inf-search-input:placeholder-shown{
+    vertical-align: bottom;
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 0;
+    text-overflow: ellipsis;
+}
+// .
+.search-section:global(.inf-is-visible){
+    position: fixed;
+    top: 50px;
+    width: 100%;
+    height: auto;
+    z-index: 20;
+    overflow-y: auto;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s .1s,top .3s ease-in-out;
+}
+
+.search-section{
+    top: 145px;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(240,240,240,.97);
+}
+.inf-search-input{
+    width: 100%;
+    border: 0 solid transparent;
+    background: transparent;
+    font-size: 30px;
+    height: 40px;
+    letter-spacing: .1em;
+    color: #222;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    border-bottom: 1px solid #ccc;
+    padding-right: 70px;
+    padding-left: 10px !important;
+}
+.inf-search-clear{
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+    color: #9f9f9f;
+}
+

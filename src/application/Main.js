@@ -4,28 +4,24 @@ import { Provider } from 'react-redux';
 import {IntlProvider,FormattedMessage} from 'react-intl';
 import Loadable from 'react-loadable';
 
-import Routes from './routes';
-import configureStore from './store/configureStore';
-import { history } from './history';
-import intlConfig from './IntlConfig';
-import './glpbal';
+// import Routes from './routes';
+// import configureStore from './store/configureStore';
+// import { history } from './history';
+// import intlConfig from './IntlConfig';
+// import './glpbal';
 
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
 
-const store = configureStore({});
+// const store = configureStore({});
 class Main extends Component {
 	constructor(properties, context) {
 		super(properties, context)
 	}
 	render() {
-		return <IntlProvider {...intlConfig}>
-			<Provider store={store}>
-				<Routes history={history}>
-				</Routes>
-			</Provider>
-		</IntlProvider>
+		return <div>xxx</div>
+			
 	}
 }
 

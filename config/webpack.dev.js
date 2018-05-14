@@ -12,7 +12,7 @@
 const webpack = require('webpack');
 const config = require("./index");
 const baseConfig = require('./webpack.base');
-
+const path = require('path');
 const {host,port} = config.server;
 //; --exec babel-node --presets es2015,stage-2
 const webpackConfigDev = {
@@ -27,6 +27,23 @@ const webpackConfigDev = {
     output:{
         ...baseConfig.output,
         publicPath:`http://${host}:${port}/dist/`,
+    },
+    devServer: {
+        contentBase: path.join(__dirname, 'Main'),
+        historyApiFallback: true,
+        hot: false,//关闭热点
+        inline: true,//开启页面刷新
+        host: '127.0.0.1',
+        port: port,
+        // proxy:[
+        //     {
+        //         context:content,
+        //         target:"http://192.168.1.17:8080/",
+        //         changeOrigin:true,
+        //         secure:false
+        //     }
+        // ]
+        // stats: { colors: true },
     },
     plugins: [
         // “If you are using the CLI, the webpack process will not exit with an error code by enabling this plugin.”

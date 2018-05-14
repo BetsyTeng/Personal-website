@@ -20,7 +20,22 @@ server
     .set('view engine', 'ejs')
     .get('/',function(req,res){
         res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main/>)},function(err,html){
-            res.send(minify(html)) 
+            fetch("/students.json")
+            .then(
+                function(response){
+                    if(response.status!==200){
+                        console.log("存在一个问题，状态码为："+response.status);
+                        return;
+                    }
+                    response.json().then(function(data){
+                        res.send(minify(html)) 
+                    });
+                }
+            )
+            .catch(function(err){
+                console.log("Fetch错误:"+err);
+            });
+            
         })
     });
 

@@ -1,5 +1,7 @@
-import Main from './application/Main';
-import ReactDOMServer  from 'react-dom/server';
-import React from 'react';
-const Index = ReactDOMServer.renderToString(<Main/>);
-export default Index;
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import App from './application/Main.js';
+ReactDOM.render(
+    <Main />,
+    document.getElementById('root')
+);

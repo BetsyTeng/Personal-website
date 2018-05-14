@@ -15,6 +15,7 @@ const baseConfig = require('./webpack.base');
 const path = require('path');
 const {host,port} = config.server;
 //; --exec babel-node --presets es2015,stage-2
+console.log('>>>>>>>>>>>>>>>>>>>>>......................',path.join(__dirname, 'Main'));
 const webpackConfigDev = {
     ...baseConfig,
     mode: 'development',
@@ -29,7 +30,7 @@ const webpackConfigDev = {
         publicPath:`http://${host}:${port}/dist/`,
     },
     devServer: {
-        contentBase: path.join(__dirname, 'Main'),
+        contentBase: config.client,
         historyApiFallback: true,
         hot: false,//关闭热点
         inline: true,//开启页面刷新

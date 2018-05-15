@@ -10,18 +10,18 @@
 // import baseConfig from './webpack.config.base';
 
 const webpack = require('webpack');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const config = require("./index");
 const baseConfig = require('./webpack.base');
 const path = require('path');
+
 const {host,port} = config.server;
 //; --exec babel-node --presets es2015,stage-2
-console.log('>>>>>>>>>>>>>>>>>>>>>......................',path.join(__dirname, 'Main'));
 const webpackConfigDev = {
     ...baseConfig,
     mode: 'development',
     devtool: 'cheap-module-eval-source-map',
     entry:[
-        
         `webpack-hot-middleware/client?path=http://${host}:${port}`,
         `${config.client}/index.js`,
     ],
@@ -30,11 +30,12 @@ const webpackConfigDev = {
         publicPath:`http://${host}:${port}/dist/`,
     },
     devServer: {
+        // 
         contentBase: config.client,
         historyApiFallback: true,
         hot: false,//关闭热点
         inline: true,//开启页面刷新
-        host: '127.0.0.1',
+        host: host,
         port: port,
         // proxy:[
         //     {
@@ -52,11 +53,17 @@ const webpackConfigDev = {
         new webpack.NoEmitOnErrorsPlugin(),
         // https://webpack.github.io/docs/hot-module-replacement-with-webpack.html
         new webpack.HotModuleReplacementPlugin(),
-
+        new HTMLWebpackPlugin({
+            title: 'index',
+            filename:`${config.dist}/index.html`,
+            template:`${config.client}/index.html`,
+            inject: 'body',
+            chunksSortMode: 'dependency'
+        }),
         // // NODE_ENV should be production so that modules do not perform certain development checks
-        // new webpack.DefinePlugin({//定义环境变量为开发环境
-        //     'process.env.NODE_ENV': JSON.stringify('development')
-        // }),
+        new webpack.DefinePlugin({//定义环境变量为开发环境
+            'process.env.NODE_ENV': JSON.stringify('development')
+        }),
     ],
     // https://github.com/chentsulin/webpack-target-electron-renderer#how-this-module-works
     target: 'electron-renderer'

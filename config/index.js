@@ -11,7 +11,7 @@ const config = {
     client:path.resolve(__dirname,'../src'),
     assets:path.resolve(__dirname,'../src/application/assets'),
     dist:path.resolve(__dirname,'../dist'),
-    views:path.resolve(__dirname,'../src/application/views'),
+    server:path.resolve(__dirname,'../src/server')
 };
 module.exports = config;
 // export default config;

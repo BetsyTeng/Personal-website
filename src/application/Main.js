@@ -20,7 +20,7 @@ class Main extends Component {
 		super(properties, context)
 	}
 	render() {
-		return <div>xxx</div>
+		return <div>xsssssxx</div>
 			
 	}
 }

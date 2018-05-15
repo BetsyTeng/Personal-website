@@ -1,10 +1,3 @@
-// import path from 'path';
-// import webpack from 'webpack';
-// import MinifyPlugin from 'babel-minify-webpack-plugin';
-// import config from './index';
-// import CopyWebpackPlugin from 'copy-webpack-plugin';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
-// import baseConfig from './webpack.config.base';
 const path = require('path');
 const webpack = require('webpack');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
@@ -15,12 +8,13 @@ const baseConfig = require('./webpack.base');
 const webpackConfigProduction =  {
     ...baseConfig,
     devtool:false,
+    mode: 'production',
     entry:[
-        `${config.client}/app.js`,
+        `${config.client}/index.js`,
     ],
     output:{
         path:config.dist,
-        filename:'app.[hash].js'
+        filename:'[name].[hash].js',
     },
     plugins:[
         // https://github.com/webpack/webpack/issues/2545
@@ -38,6 +32,10 @@ const webpackConfigProduction =  {
         }),
 
         new CopyWebpackPlugin([
+            {
+                from:`${config.server}/**/*`,
+                to:config.dist,
+            },
             {
                 from:`${config.assets}/**/*`,
                 to:`${config.dist}`,

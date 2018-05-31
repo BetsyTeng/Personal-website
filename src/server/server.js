@@ -19,23 +19,23 @@ server
     .set('views',__dirname+'/views')//设置模板路径，取views变量里的 './views'
     .set('view engine', 'ejs')
     .get('/',function(req,res){
-        res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main/>)},function(err,html){
-            fetch("/students.json")
-            .then(
-                function(response){
-                    if(response.status!==200){
-                        console.log("存在一个问题，状态码为："+response.status);
-                        return;
-                    }
-                    response.json().then(function(data){
-                        res.send(minify(html)) 
-                    });
-                }
-            )
-            .catch(function(err){
-                console.log("Fetch错误:"+err);
-            });
-            
+        res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main/>),dehydratedState:null},function(err,html){
+            // fetch("/students.json")
+            // .then(
+            //     function(response){
+            //         if(response.status!==200){
+            //             console.log("存在一个问题，状态码为："+response.status);
+            //             return;
+            //         }
+            //         response.json().then(function(data){
+                        
+            //         });
+            //     }
+            // )
+            // .catch(function(err){
+            //     console.log("Fetch错误:"+err);
+            // });
+            res.send(minify(html)) 
         })
     });
 

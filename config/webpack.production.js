@@ -14,7 +14,7 @@ const webpackConfigProduction =  {
     ],
     output:{
         path:config.dist,
-        filename:'[name].[hash].js',
+        filename:'[name].[hash].js'
     },
     plugins:[
         // https://github.com/webpack/webpack/issues/2545
@@ -33,7 +33,7 @@ const webpackConfigProduction =  {
 
         new CopyWebpackPlugin([
             {
-                from:`${config.server}/**/*`,
+                from:`${config.serverURL}/**/*`,
                 to:config.dist,
             },
             {

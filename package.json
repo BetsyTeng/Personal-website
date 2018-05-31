@@ -5,14 +5,23 @@
   "main": "index.js",
   "icons": [
     {
-      "src": "./public/favicon.ico",
+      "src": "../public/favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
   ],
+  "browserslist": [
+    "defaults",
+    "not ie < 11",
+    "last 2 versions",
+    "> 1%",
+    "iOS 7",
+    "last 3 iOS versions"
+  ],
   "scripts": {
     "start": "webpack-dev-server  --devtool eval --progress --hot --inline --colors --open --config ./config/webpack.dev.js",
     "build": "webpack --config ./config/webpack.production.js",
+    "start:test:build":"webpack --config ./config/webpack.dev.js",
     "build:server": "node ./src/server",
     "test": "eslint * --fix"
   },

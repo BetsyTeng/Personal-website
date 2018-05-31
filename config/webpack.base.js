@@ -11,7 +11,7 @@ const webpackConfigBase = {
             exclude: /node_modules/,
             use: "babel-loader"
         },
-        { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+        { test: /\.css$/, use: ['style-loader', 'css-loader','postcss-loader'] },
         {
             test: /\.scss$/,
             use: [
@@ -66,11 +66,10 @@ const webpackConfigBase = {
         }
     ]
     },
-    output: {
+    output: {//classnames
         path: config.dist,
         publicPath: '/',
-        filename: '[name].js',
-        chunkFilename: '[id].chunk.js'
+        filename: '[name].[hash].js'
     },
     resolve: {
         extensions: [".scss", '.js', 'jsx'],

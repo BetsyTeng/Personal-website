@@ -30,7 +30,8 @@ class Home extends Component {
         const {searchStateResult}  = this.props; 
         return (
             <div className={style.Home}>
-                <SearchSection className={this.props.searchStateResult.hasShowSearch?"inf-is-visible":""} />
+                
+                {/* <SearchSection className={this.props.searchStateResult.hasShowSearch?"inf-is-visible":""} /> */}
             </div>
         );
     }

@@ -15,7 +15,6 @@ class Menu extends Component {
       wishlist:0,
       me:'',
     };
-    // console.log(tabItems);
   }
   render() {
     return (

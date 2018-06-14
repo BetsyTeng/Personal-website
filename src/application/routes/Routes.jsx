@@ -12,7 +12,7 @@ class Routes extends Component {
   render() {
     return (
       <ConnectedRouter history={this.props.history}>
-        <App>
+         <App>
           {routesConfig.map(route => (<Route
             key={route.path}
             exact={route.exact}
@@ -27,7 +27,6 @@ class Routes extends Component {
 }
 
 export default Routes;
-
 
 //  {this.props.children}
  //   <Switch>   <Route exact path="/" component={Home} />   <Route path="/about"

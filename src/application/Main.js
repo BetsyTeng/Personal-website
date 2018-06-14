@@ -6,10 +6,11 @@ import Loadable from 'react-loadable';
 import configureStore from './store/configureStore'
 import intlConfig from './IntlConfig';
 import Routes from './routes';
+import {history} from './history';
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
-console.log('+++',Routes);
+console.log('+++',history);
 const store = configureStore({});
 class Main extends Component {
 	constructor(properties, context) {

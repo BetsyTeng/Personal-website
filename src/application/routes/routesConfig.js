@@ -14,11 +14,7 @@ const LoadableHome = Loadable({
         import ('../pages/Home'),
     loading: Loading,
 });
-const LoadableAbout = Loadable({
-    loader: () =>
-        import ('../pages/ProductItems'),
-    loading: Loading,
-});
+
 // const LoadableProductItems = Loadable({
 //     loader: () =>
 //         import ('../pages/ProductItems'),
@@ -34,7 +30,11 @@ const LoadableAbout = Loadable({
 //         import ('../pages/useraccount'),
 //     loading: Loading,
 // });
-
+const LoadableAbout = Loadable({
+    loader: () =>
+        import ('../pages/ProductItems'),
+    loading: Loading,
+});
 const routesConfig = [{
     path: '/',
     exact: true,

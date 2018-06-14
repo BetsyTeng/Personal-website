@@ -6,7 +6,6 @@ class ProductItems extends Component {
         }
 
     render() {
-        console.log('为什么不刷新呢');
         return <div className = {style.ProductItems}>
             'ProductItems'
             </div>

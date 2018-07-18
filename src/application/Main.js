@@ -7,6 +7,7 @@ import configureStore from './store/configureStore'
 import intlConfig from './IntlConfig';
 import Routes from './routes';
 import {history} from './history';
+require('./glpbal');
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()

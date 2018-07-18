@@ -1,5 +1,13 @@
-.wel {}
 
+header{
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 70px;
+    line-height: 70px;
+    background: #f4f7f6;
+    border-bottom: 1px solid;
+}
 .font {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;

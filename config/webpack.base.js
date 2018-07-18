@@ -11,7 +11,7 @@ const webpackConfigBase = {
             exclude: /node_modules/,
             use: "babel-loader"
         },
-        { test: /\.css$/, use: ['style-loader', 'css-loader','postcss-loader'] },
+        { test: /\.css$/, use: ['style-loader', 'css-loader'] },//去掉'postcss-loader',否则无法用多个css
         {
             test: /\.scss$/,
             use: [
@@ -23,7 +23,7 @@ const webpackConfigBase = {
                         modules: true,
                         url:false,
                         camelCase: 'dashesOnly',
-                        localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                        localIdentName: '[local]--[hash:base64:5]'
                     }
                 },
                 {

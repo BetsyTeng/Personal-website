@@ -11,9 +11,6 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: ['1', '2', '3'],
-            imgHeight: 176,
-            slideIndex: 0
         }
     }
     

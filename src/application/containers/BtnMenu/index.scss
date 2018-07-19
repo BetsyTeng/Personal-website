@@ -5,10 +5,16 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
+.menuWarpper:hover{
+    .bar::after{
+        left:0;
+    }
+}
 .btMenu{
     float: left;
     min-width: 115px;
     height: 70px;
+    line-height: 70px;
     border-right: 1px solid #e6eaea;
     overflow: hidden;
 }

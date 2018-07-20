@@ -12,7 +12,9 @@ font-style: normal;
 :global{
     @import './static/icon-glyph';
     @import './static/variables';
-    
+    .wrapper{
+        padding-top: 70px;
+    }
     .icon-glyph{
         font-size: 12px;
     }

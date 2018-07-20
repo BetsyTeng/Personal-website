@@ -11,7 +11,6 @@ require('./glpbal');
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
 import injectTapEventPlugin from 'react-tap-event-plugin'
 injectTapEventPlugin()
-console.log('+++',history);
 const store = configureStore({});
 class Main extends Component {
 	constructor(properties, context) {

@@ -3,9 +3,13 @@ import { combineReducers } from 'redux'
 import {
     searchStateResult
 } from './searchState';
+import {
+    homeRequestResult
+} from './HomeState';
 const rootReducer = combineReducers({
     config: (state = {}) => state,
-    searchStateResult
+    searchStateResult,
+    homeRequestResult
 })
 
 export default rootReducer;

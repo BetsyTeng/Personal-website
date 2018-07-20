@@ -10,4 +10,4 @@ export const searchStateResult = handleActions({
     "CHANGE_SEARCHSECTION_STATE"(state, action){
         return Object.assign({state,hasShowSearch:action.payload.hasShowSearch})
     }
-},SearchResultState)
+},SearchResultState);

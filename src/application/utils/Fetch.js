@@ -15,5 +15,13 @@ const config = {
 export const fetchFun = (url,target)=>(reqData, handleCancel)=>{
         var newUrl = _path+url;
        const _request = new Request(newUrl,_headers);
-      return fetch(_request)
+      return fetch(_request).then(function(response){
+            if(response.ok)
+            {
+                return response.json();
+            }else{
+                throw new Error('Network response was not ok.');
+            }
+            return response;
+      })
 }

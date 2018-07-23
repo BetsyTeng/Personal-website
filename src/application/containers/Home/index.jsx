@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import style from './index.scss';
 import {connect} from 'react-redux';
-
+import Loading from '../Loading/index.jsx';
 import {
         HomeRequest
     } from "../../actions";
@@ -16,30 +16,24 @@ class Home extends Component {
     }
     
     componentDidMount() {
-        
-      setTimeout(()=>{
-        console.log('....',this.props.homeRequestResult);
-      },2000);
+      
     }
     componentWillMount(){
-        this.props.dispatch(HomeRequest({}))
+        this.props.dispatch(HomeRequest({}));
         // console.log( HomeRequest({}) instanceof Function);
         
     }
     componentWillUpdate(){
-        // {},(response)=>{
-        //     console.log(response); 
-        //  },(response)=>{
-        //      console.log(response);
-        //  }
     }
+
     render() {
-        const {searchStateResult}  = this.props; 
+        const {homeRequestResult}  = this.props;
+        const data = homeRequestResult.data;
+        console.log('homeRequestResult',homeRequestResult,data); 
         return (
-            <div className={style.Home}>
-                xxxxx
-                
-                {/* <SearchSection className={this.props.searchStateResult.hasShowSearch?"inf-is-visible":""} /> */}
+            <div className={style.Home} style={{'background':`${(homeRequestResult&&homeRequestResult.loaded?data.pulic.background:'')}`}}>
+            {/* {homeRequestResult&&homeRequestResult.loaded?} */}
+            <Loading />
             </div>
         );
     }

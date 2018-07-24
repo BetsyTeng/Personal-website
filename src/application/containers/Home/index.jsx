@@ -13,6 +13,7 @@ class Home extends Component {
         super(props);
         this.state = {
         }
+        this.getData = this.getData.bind(this);
     }
     
     componentDidMount() {
@@ -26,14 +27,21 @@ class Home extends Component {
     componentWillUpdate(){
     }
 
+    getData(items){
+        return (
+        <div className={style.title}>
+            <h1>{items.Introduction}</h1>
+            <h2>{items.name}</h2>
+        </div>
+        );
+    }
+
     render() {
         const {homeRequestResult}  = this.props;
         const data = homeRequestResult.data;
-        console.log('homeRequestResult',homeRequestResult,data); 
         return (
-            <div className={style.Home} style={{'background':`${(homeRequestResult&&homeRequestResult.loaded?data.pulic.background:'')}`}}>
-            {/* {homeRequestResult&&homeRequestResult.loaded?} */}
-            <Loading />
+            <div className={style.Home} style={{'backgroundImage':`url(./application/${(homeRequestResult&&homeRequestResult.loaded?data.pulic.background:'')})`}}>
+            {(homeRequestResult&&homeRequestResult.loaded)?this.getData(data.pulic):<Loading />}
             </div>
         );
     }

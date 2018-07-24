@@ -1,0 +1,20 @@
+.Home{
+    position: relative;
+    text-align: center;
+    background-position: 50% 0;
+    background-size: cover;
+    min-height: 100vh;
+    padding-top: 15vh;
+}
+.title{
+    display: inline-block;
+    text-align: center;
+    padding-top: 15vh;
+    h1{
+        margin-bottom: 5vh;
+        line-height: 1.2;
+    }
+    h2{
+        line-height: 1.2;
+    }
+}

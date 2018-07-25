@@ -1,4 +1,4 @@
-import style from "./index.scss";
+import style from "./style";
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ChangeSearchSectionState } from "../../actions/index.js";

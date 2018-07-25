@@ -2,7 +2,7 @@
     {
         "pulic": {
             "name": "hahahhahah",
-            "background": "./static/images/bg.jpg",
+            "background": "/static/images/bg.jpg",
             "Introduction": "我的图书馆"
         },
         "items": [

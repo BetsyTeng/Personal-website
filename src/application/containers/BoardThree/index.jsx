@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './index.scss';
+import style from './style';
 import Element from './scene';
 class BoardThress extends Component {
     constructor(props) {

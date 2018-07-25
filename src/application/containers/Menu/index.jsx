@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
-import style from './index.scss';
+import style from './style';
 import { 
   Link
 } from 'react-router-dom';

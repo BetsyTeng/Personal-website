@@ -1,4 +1,4 @@
-import style from './index.scss';
+import style from './style';
 import React, { Component } from 'react';
 class CircleButton extends Component{
    render(){

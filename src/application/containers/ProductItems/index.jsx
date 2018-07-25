@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import style from './index.scss';
+import style from './style';
 class ProductItems extends Component {
     constructor(props) {
         super(props);

@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import style from './index.scss';
+import style from './style';
 import {ChangeSearchSectionState} from "../../actions/index.js";
 
 class BtnMenu extends Component {

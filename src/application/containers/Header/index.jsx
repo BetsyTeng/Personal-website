@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import getCartInfo from './header.js';
-import style from './index.scss';
+import style from './style';
 import {ChangeSearchSectionState} from "../../actions/index.js";
 import ButtonMenu from '../BtnMenu/index.jsx';
 @connect((state,props)=>({
@@ -54,6 +54,7 @@ class Header extends Component {
     return (
       <header className={[style.Header, this.props.Header]}>
         <ButtonMenu />
+        <TableWrapper />
       </header>
     );
   }

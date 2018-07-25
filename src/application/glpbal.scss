@@ -1,46 +1,51 @@
 @font-face {
-font-family: 'icomoon';
-src:  url('./static/fonts/icomoon.eot?h7c05q');
-src:  url('fonts/icomoon.eot?h7c05q#iefix') format('embedded-opentype'),
-    url('./static/fonts/icomoon.ttf?h7c05q') format('truetype'),
-    url('./static/fonts/icomoon.woff?h7c05q') format('woff'),
-    url('./static/fonts/icomoon.svg?h7c05q#icomoon') format('svg');
-font-weight: normal;
-font-style: normal;
-}
-  
-:global{
-    @import './static/icon-glyph';
-    @import './static/variables';
-    .wrapper{
-        padding-top: 70px;
+    font-family: 'icomoon';
+    src:  url('./static/fonts/icomoon.eot?h7c05q');
+    src:  url('fonts/icomoon.eot?h7c05q#iefix') format('embedded-opentype'),
+        url('./static/fonts/icomoon.ttf?h7c05q') format('truetype'),
+        url('./static/fonts/icomoon.woff?h7c05q') format('woff'),
+        url('./static/fonts/icomoon.svg?h7c05q#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
     }
-    .icon-glyph{
-        font-size: 12px;
+
+    :global{
+        @import './static/icon-glyph';
+        @import './static/variables';
+        .wrapper{
+            position: relative;
+            padding-top: 70px;
+            text-align: center;
+            background-position: 50% 0;
+            background-size: cover;
+            min-height: 100vh;
+        } 
+        .icon-glyph{
+            font-size: 12px;
+        }
+        header{
+           border-bottom-color: $border-ccc; 
+        }
+        *{
+            margin: 0;
+            padding: 0;
+           
+        }
+        *,::before,::after{
+            box-sizing: border-box;
+        }
+        body{
+            font-size: $fontSize;
+            line-height: $fontSize;
+            background: $background-color;
+            color: $text-color;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+        input{
+            display: block;
+            width: 100%;
+            padding: 8px;
+            -webkit-appearance: none;
+        }
     }
-    header{
-       border-bottom-color: $border-ccc; 
-    }
-    *{
-        margin: 0;
-        padding: 0;
-       
-    }
-    *,::before,::after{
-        box-sizing: border-box;
-    }
-    body{
-        font-size: $fontSize;
-        line-height: $fontSize;
-        background: $background-color;
-        color: $text-color;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
-    }
-    input{
-        display: block;
-        width: 100%;
-        padding: 8px;
-        -webkit-appearance: none;
-    }
-}

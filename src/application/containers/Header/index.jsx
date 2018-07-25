@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
-import getCartInfo from './header.js';
+import getCartInfo from './header';
 import style from './style';
-import {ChangeSearchSectionState} from "../../actions/index.js";
-import ButtonMenu from '../BtnMenu/index.jsx';
+import {ChangeSearchSectionState} from "../../actions";
+import BtnMenu from '../BtnMenu/index.jsx';
+import TableWrapper from '../TableWrapper/index.jsx'
 @connect((state,props)=>({
   config: state.config,
   searchStateResult:state.searchStateResult,
@@ -53,7 +54,7 @@ class Header extends Component {
   render() {
     return (
       <header className={[style.Header, this.props.Header]}>
-        <ButtonMenu />
+        <BtnMenu />
         <TableWrapper />
       </header>
     );

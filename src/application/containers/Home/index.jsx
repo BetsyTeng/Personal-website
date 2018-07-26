@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import style from './style';
 import {connect} from 'react-redux';
 import Loading from '../Loading/index.jsx';
-import {
-        HomeRequest
-    } from "../../actions";
+
 @connect((state,props)=>({
     homeRequestResult:state.homeRequestResult,
     }))
@@ -20,7 +18,7 @@ class Home extends Component {
       
     }
     componentWillMount(){
-         this.props.dispatch(HomeRequest({}));
+         
         // console.log( HomeRequest({}) instanceof Function);
         
     }

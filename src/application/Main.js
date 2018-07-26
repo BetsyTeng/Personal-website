@@ -7,10 +7,8 @@ import intlConfig from './IntlConfig';
 import Routes from './routes';
 import {history} from './history';
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
-
-// <Route exact path="/" component={Home} />
-// <Route path="/about" component={About} />
-// <Route path="/topics" component={Topics} />
+const injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 const store = configureStore({});
 class Main extends Component {
 	constructor(properties, context) {

@@ -10,12 +10,7 @@ class TableWrapper extends Component{
     constructor(){
         super();
     }
-    // static propTypes = {
-    //     match: PropTypes.object.isRequired,
-    //     location: PropTypes.object.isRequired,
-    //     history: PropTypes.object.isRequired
-    //   }
-    
+
     render(){
         return (<div className={style.TableWrapper}>
             <ul>

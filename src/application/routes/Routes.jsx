@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import {Route } from 'react-router-dom';
 import { ConnectedRouter } from 'react-router-redux';
 import routesConfig from './routesConfig.js';
 

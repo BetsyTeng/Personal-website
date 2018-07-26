@@ -20,7 +20,7 @@ class Home extends Component {
       
     }
     componentWillMount(){
-        this.props.dispatch(HomeRequest({}));
+         this.props.dispatch(HomeRequest({}));
         // console.log( HomeRequest({}) instanceof Function);
         
     }

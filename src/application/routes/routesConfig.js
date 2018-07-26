@@ -3,38 +3,32 @@ import Loadable from 'react-loadable';
 
 // import Home from '../pages/Home';
 // import About from '../pages/About';
-import ProductItems from '../pages/ProductItems';
-const Loading = (props) => {
-    return <div> Loading... </div>;
+// import ProductItems from '../pages/ProductItems';
+import Loading from '../containers/Loading/index.jsx'
+
+const loading = (props) => {
+    return <Loading />;
 };
 
 
 const LoadableHome = Loadable({
     loader: () =>
         import ('../pages/Home'),
-    loading: Loading,
+    loading: loading,
 });
 
-// const LoadableProductItems = Loadable({
-//     loader: () =>
-//         import ('../pages/ProductItems'),
-//     loading: Loading,
-// });
-// const LoadableWishlist = Loadable({
-//     loader: () =>
-//         import ('../pages/Wishlist'),
-//     loading: Loading,
-// });
-// const LoadableUserAccount = Loadable({
-//     loader: () =>
-//         import ('../pages/useraccount'),
-//     loading: Loading,
-// });
-const LoadableAbout = Loadable({
+const LoadableProductItems = Loadable({
     loader: () =>
         import ('../pages/ProductItems'),
-    loading: Loading,
+    loading: loading,
 });
+
+const LoadableAbout = Loadable({
+    loader:()=>
+        import ('../pages/About'),
+    loading:loading,
+});
+
 const routesConfig = [{
     path: '/',
     exact: true,
@@ -46,7 +40,7 @@ const routesConfig = [{
     thunk: () => {},
 }, {
     path: '/item',
-    component: LoadableAbout,
+    component: LoadableProductItems,
     thunk: () => {},
 }];
 // , {

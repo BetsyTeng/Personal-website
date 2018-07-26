@@ -1,23 +1,22 @@
 
 
-import { routerMiddleware } from 'react-router-redux'
-import { browserHistory } from 'react-router';
+// import { routerMiddleware,routerReducer } from 'react-router-redux'
+// import { routerReducer } from 'react-router-redux';
 import logger from './logger'
 import router from './router'
-// import createHistory from 'history/createBrowserHistory'
-import history from '../history'
+// // import createHistory from 'history/createBrowserHistory'
+// import history from '../history'
 
-const reduxRouterMiddleware = routerMiddleware(history)
+// const reduxRouterMiddleware = routerMiddleware(history)
 
 export {
-    reduxRouterMiddleware,
     logger,
     router,
 }
 
 
 let _middlewares = ()=>{
-    return new Promise((resolve, reject) => {
+    return Promise((resolve, reject) => {
         
       })
 }

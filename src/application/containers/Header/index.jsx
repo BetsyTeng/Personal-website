@@ -32,26 +32,22 @@ class Header extends Component {
   }
   componentDidMount() {
     
-    console.log('componentDidMount.....header');
   }
   componentWillReceiveProps(nextProps) {
-    console.log('componentWillReceiveProps', nextProps);
   }
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('shouldComponentUpdate',);
     return true;
   }
   componentWillUpdate() {
-    
-    console.log('>>>>>>>>>>>componentWillUpdate');
   }
   componentDidUpdate() {
-    console.log('>>>>>>>>>>>componentDidUpdate');
   }
   componentWillUnmount() {
     console.log('componentWillUnmount');
   }
   render() {
+    const {match,location,history} = this.props;
+    console.log('>>>>匹配，位置，历史:::::::::::::::',match,location,history);
     return (
       <header className={[style.Header, this.props.Header]}>
         <BtnMenu />
@@ -67,7 +63,7 @@ class Header extends Component {
     leftClick: () => { },
     searchClick:function(){}
   };
-export default withRouter(Header);
+export default Header;
 
 
 

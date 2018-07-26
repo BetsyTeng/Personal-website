@@ -2,15 +2,15 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import {IntlProvider,FormattedMessage} from 'react-intl';
-import Loadable from 'react-loadable';
 import configureStore from './store/configureStore'
 import intlConfig from './IntlConfig';
 import Routes from './routes';
 import {history} from './history';
-require('./glpbal');
 // Needed for onTouchTap (http://stackoverflow.com/a/34015469/988941)
-import injectTapEventPlugin from 'react-tap-event-plugin'
-injectTapEventPlugin()
+
+// <Route exact path="/" component={Home} />
+// <Route path="/about" component={About} />
+// <Route path="/topics" component={Topics} />
 const store = configureStore({});
 class Main extends Component {
 	constructor(properties, context) {

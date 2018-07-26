@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import Header from '../containers/Header/index.jsx';
 import Footer from '../containers/Menu/index.jsx';
 const style = require('../glpbal');
@@ -23,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import { logger, reduxRouterMiddleware, router } from '../middlewares';
+import { logger, router } from '../middlewares';
 import rootReducer from '../reducers';
 const nextReducer = require('../reducers')
 
@@ -10,7 +10,6 @@ export default function configureStore(initialState) {
         createStore;
 
     const createStoreWithMiddleware = applyMiddleware(
-        reduxRouterMiddleware,
         thunkMiddleware,
         logger,
         router

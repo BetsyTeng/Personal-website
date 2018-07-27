@@ -6,10 +6,15 @@ import {
 import {
     homeRequestResult
 } from './HomeState';
+
+import {
+    aboutRequestResult
+} from './About';
 const rootReducer = combineReducers({
     config: (state = {}) => state,
     searchStateResult,
-    homeRequestResult
+    homeRequestResult,
+    aboutRequestResult
 })
 
 export default rootReducer;

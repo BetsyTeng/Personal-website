@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import style from './style';
 import {connect} from 'react-redux';
 import Loading from '../Loading/index.jsx';
-
+import {
+    HomeRequest
+  } from "../../actions";
+  
 @connect((state,props)=>({
     homeRequestResult:state.homeRequestResult,
     }))
@@ -18,16 +21,14 @@ class Home extends Component {
       
     }
     componentWillMount(){
-         
-        // console.log( HomeRequest({}) instanceof Function);
-        
+        this.props.dispatch(HomeRequest({}));
     }
     componentWillUpdate(){
     }
 
     getData(items){
         return (
-        <div className={style.title}>
+        <div className={style.title}  >
             <h1>{items.Introduction}</h1>
             <h2>{items.name}</h2>
         </div>
@@ -38,7 +39,7 @@ class Home extends Component {
         const {homeRequestResult}  = this.props;
         const data = homeRequestResult.data;
         return (
-            <div className={style.Home}>
+            <div className={style.Home} style={{'backgroundImage':`url(./application${(homeRequestResult&&homeRequestResult.loaded?homeRequestResult.data.pulic.background:'')})`}}>
             {(homeRequestResult&&homeRequestResult.loaded)?this.getData(data.pulic):<Loading />}
             </div>
         );

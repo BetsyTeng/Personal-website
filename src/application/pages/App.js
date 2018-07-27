@@ -3,10 +3,6 @@ import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import Header from '../containers/Header/index.jsx';
 import Footer from '../containers/Menu/index.jsx';
-import {
-  HomeRequest
-} from "../actions";
-
 const style = require('../glpbal');
 
 
@@ -18,12 +14,10 @@ class App extends Component {
     super(props);
   }
   componentWillMount(){
-    this.props.dispatch(HomeRequest({}));
   }
   render() {
-    const {homeRequestResult}  = this.props;
     return (
-      <div className='wrapper' style={{'backgroundImage':`url(./application${(homeRequestResult&&homeRequestResult.loaded?homeRequestResult.data.pulic.background:'')})`}}>
+      <div className='wrapper'>
       <Header />
         {this.props.children}
       <Footer />

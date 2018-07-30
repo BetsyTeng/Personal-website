@@ -15,7 +15,14 @@ class TableWrapper extends Component{
         return (<div className={style.TableWrapper}>
             <ul>
                 {links.map((item,index)=>{
-                    return <li key={index}><Link to={item.link}>{item.title}</Link></li> 
+                    return <li key={index}>
+                        <Link to={item.link}>
+                            <article className={style.article}>
+                                <span className={style.normal}>{item.title}</span>
+                                <span className={style.hover}>{item.title}</span>
+                            </article>
+                        </Link>
+                    </li> 
                 })}
             </ul>
         </div>);

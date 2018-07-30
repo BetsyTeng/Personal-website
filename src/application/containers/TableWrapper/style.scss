@@ -4,10 +4,44 @@
     display: inline-flex;
     li{
         list-style: none;
-        padding: 0 20px;
+    }
+    .article{
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        line-height: 1.1;
+        
+    }
+    a{
+        padding: 29px 20px;
+        text-decoration: none;
+        font-weight: bold;
+        .normal,.hover{
+            transition: top 0.25s ease-in-out;
+        }
+        .normal{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .hover{
+            position: absolute;
+            top:17px;
+            left: 0;
+            color: #000;
+        }
+    }
+    a:hover{
+        .normal{
+            top: -17px;
+        }
+        .hover{
+            top: 0;
+        }
     }
     .active{
         text-decoration: aqua;
     }
+    
  }   
 }

@@ -11,44 +11,38 @@ const sonwScene = (parentElement, bgImage) => {
         parentElement.appendChild(renderer.domElement);
     } else {
         document.body.appendChild(renderer.domElement);
-    }
+    } 
 
     function init(url) {
         infrastructure();
         loaderBg(url);
-        cube = createElement();
-        scene.add(cube);
-        tick();
-        // raycaster();
+        
+        
+        raycaster();
     }
 
     function infrastructure(){
         camera.position.z = 5;
+        camera.lookAt( new THREE.Vector3() );
     }
 
     function raycaster() {
         var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
+        var mouse = new THREE.Vector3();
 
         function onMouseMove(event) {
-
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-            console.log(mouse.x, mouse.y)
         }
 
         function render() {
             // window.requestAnimationFrame(render);
             // update the picking ray with the camera and mouse position	
             raycaster.setFromCamera(mouse, camera);
-
             // calculate objects intersecting the picking ray
             var intersects = raycaster.intersectObjects(scene.children);
-
             for (var i = 0; i < intersects.length; i++) {
-
-                intersects[i].object.material.color.set(0xff0000);
-
+                // intersects[i].object.material.color.set(0xffff00);
             }
 
             renderer.render(scene, camera);
@@ -60,9 +54,8 @@ const sonwScene = (parentElement, bgImage) => {
         window.requestAnimationFrame(render);
     }
 
-    function createElement() {
-        let geometry = new THREE.BoxGeometry(1, 1, 1);
-        let material = new THREE.MeshBasicMaterial();
+    function createElement(material) {
+        let geometry = new THREE.SphereGeometry(2, 50,50);
         let _cube = new THREE.Mesh(geometry, material);
         return _cube;
     }
@@ -72,7 +65,12 @@ const sonwScene = (parentElement, bgImage) => {
         loader.load(
             url,
             (image)=>{
-                material = new THREE.MeshBasicMaterial({ map: map, color: 0xffffff, fog: true });
+                var texture = new THREE.CanvasTexture( image );
+                material = new THREE.MeshBasicMaterial({ map: texture, color: 0xffffff, fog: true });
+                
+                cube = createElement(material);
+                scene.add(cube);
+                tick();
             },
             ( xhr)=>{
                 console.log( (xhr.loaded / xhr.total * 100) + '% loaded' );
@@ -81,33 +79,10 @@ const sonwScene = (parentElement, bgImage) => {
                 console.log( 'An error happened' );
             })
 
-        let map = new THREE.Sphere();
-        let sprite = new THREE.Mesh(material);
-        scene.add(sprite);
+        // let map = new THREE.Sphere();
+        // let sprite = new THREE.Mesh(material);
+        // scene.add(sprite);
         
-
-        // var bones = [];
-
-        // var shoulder = new THREE.Bone();
-        // var elbow = new THREE.Bone();
-        // var hand = new THREE.Bone();
-
-        // shoulder.add(elbow);
-        // elbow.add(hand);
-
-        // bones.push(shoulder);
-        // bones.push(elbow);
-        // bones.push(hand);
-
-        // shoulder.position.y = -5;
-        // elbow.position.y = 0;
-        // hand.position.y = 5;
-
-        // var armSkeleton = new THREE.Skeleton(bones);
-        // let material = new THREE.MeshBasicMaterial();
-        // let _cube = new THREE.Mesh(armSkeleton, material);
-        // armSkeleton.update();
-        // scene.add(_cube);
     }
 
 

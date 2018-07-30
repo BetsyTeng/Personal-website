@@ -28,6 +28,7 @@ class About extends Component{
     }
 
     initScene(){
+
         const {aboutRequestResult}  = this.props;
         const data = aboutRequestResult.data;
         let bgUrl = aboutRequestResult.loaded?`./application${(aboutRequestResult&&aboutRequestResult.loaded?aboutRequestResult.data.pulic.background:'')}`:null;

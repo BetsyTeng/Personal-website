@@ -2,7 +2,8 @@ import React,{Component} from 'react';
 import style from './style.scss';
 import sonwScene from './About';
 import {
-    AboutRequest
+    AboutRequest,
+    ActionCreateScene
   } from "../../actions";
   
 import {connect} from 'react-redux';
@@ -11,12 +12,12 @@ import {connect} from 'react-redux';
 
 @connect((state,props)=>({
     aboutRequestResult:state.aboutRequestResult,
+    createSceneHandler:state.createSceneHandler
     }))
 class About extends Component{
     constructor(){
         super();
         this.initScene = this.initScene.bind(this);
-        this.hasScene = false;
     }
 
     componentWillMount(){
@@ -32,10 +33,14 @@ class About extends Component{
         const {aboutRequestResult}  = this.props;
         const data = aboutRequestResult.data;
         let bgUrl = aboutRequestResult.loaded?`./application${(aboutRequestResult&&aboutRequestResult.loaded?aboutRequestResult.data.pulic.background:'')}`:null;
-        if(bgUrl&&!this.hasScene)
+        console.log('createScene',aboutRequestResult.createScene);
+        if(bgUrl&&!aboutRequestResult.createScene)
         {
-            sonwScene(this.refs['canvas-box'],bgUrl);
-            this.hasScene = true;
+            
+            this.props.dispatch(ActionCreateScene({}));
+            setTimeout(()=>{
+                sonwScene(this.refs['canvas-box'],bgUrl);
+            },200);
         }
     }
 

@@ -5,6 +5,8 @@ import * as about from '../api/about';
 
 import {asyncAjaxAction} from '../utils';
 export const ChangeSearchSectionState = createAction("CHANGE_SEARCHSECTION_STATE");
+export const ActionCreateScene = createAction("CREATESCENE");
+
 
 export const HomeStartHandler = createAction('HOME_START_HANDLER');
 export const HomeEndHandler = createAction('HOME_END_HANDLER');

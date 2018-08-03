@@ -1,6 +1,6 @@
 
 
-import Main from './../application/Main';
+import Main from './../application/Main.server';
 import ReactDOMServer  from 'react-dom/server';
 import React from 'react';
 import nodeSass from 'node-sass';
@@ -18,16 +18,16 @@ server
     .set('views',__dirname+'/views')//设置模板路径，取views变量里的 './views'
     .set('view engine', 'ejs')
     .get('/',function(req,res){
-        res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main/>),dehydratedState:null},function(err,html){
+        res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main />),dehydratedState:null},function(err,html){
             res.send(minify(html)) 
         })
     });
 
-    server.get('/detail/:id',function(req,res){
-        var _render = 'xx' ;
-        res.render('details',{title:'detail',render:ReactDOMServer.renderToString(<Main/>),metas:[]},function(err,html){
-            res.send(minify(html))
-        })
-    });
+    // server.get('/detail/:id',function(req,res){
+    //     var _render = 'xx' ;
+    //     res.render('details',{title:'detail',render:ReactDOMServer.renderToString(<Main/>),metas:[]},function(err,html){
+    //         res.send(minify(html))
+    //     })
+    // });
     
     module.exports = server;

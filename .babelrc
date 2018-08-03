@@ -5,13 +5,17 @@
         "stage-0"
     ],
     "plugins": [
-        "babel-plugin-dynamic-import-webpack",
-        "transform-decorators-legacy"
-        // ["import",
-        //      {
-        //         "libraryName": "antd-mobile",
-        //         "libraryDirectory": "lib",
-        //         "style": "css"
-        //     }]
+        "dynamic-import-webpack",
+        "transform-decorators-legacy",
+        [
+        "transform-runtime",
+        {
+            "helpers": false,
+            "polyfill": false,
+            "regenerator": true,
+            "moduleName": "babel-runtime" 
+        }
+        ]
     ]
+    
 }

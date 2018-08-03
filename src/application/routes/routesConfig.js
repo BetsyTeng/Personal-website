@@ -1,34 +1,27 @@
 import React from 'react';
-import Loadable from 'react-loadable';
+// import Loadable from 'react-loadable';
 
 // import Home from '../pages/Home';
 // import About from '../pages/About';
 // import ProductItems from '../pages/ProductItems';
 import Loading from '../containers/Loading/index.jsx'
-
+import asyncComponent from "../utils/asyncComponent";
 const loading = (props) => {
     return <Loading />;
 };
 
 
-const LoadableHome = Loadable({
-    loader: () =>
-        import ('../pages/Home'),
-    loading: loading,
-});
+// const LoadableHome = Loadable({
+//     loader: () =>
+//         import ('../pages/Home'),
+//     loading: loading,
+// });
 
-const LoadableProductItems = Loadable({
-    loader: () =>
-        import ('../pages/ProductItems'),
-    loading: loading,
-});
+const LoadableHome = asyncComponent(()=>import ('../pages/Home'));
 
-const LoadableAbout = Loadable({
-    loader:()=>
-        import ('../pages/About'),
-    loading:loading,
-});
+const LoadableProductItems = asyncComponent(()=>import ('../pages/ProductItems'));
 
+const LoadableAbout = asyncComponent(()=>import ('../pages/About'));
 const routesConfig = [{
     path: '/',
     exact: true,

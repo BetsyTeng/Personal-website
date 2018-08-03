@@ -8,15 +8,13 @@ import {
 } from './HomeState';
 
 import {
-    aboutRequestResult,
-    createSceneHandler
+    aboutRequestResult
 } from './About';
 const rootReducer = combineReducers({
     config: (state = {}) => state,
     searchStateResult,
     homeRequestResult,
-    aboutRequestResult,
-    createSceneHandler
+    aboutRequestResult
 })
 
 export default rootReducer;

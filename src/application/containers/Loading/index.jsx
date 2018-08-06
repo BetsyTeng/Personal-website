@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import style from './style';
+// import style from './style';
+let style = {};
 class Loading extends Component {
     constructor(){
     super();   

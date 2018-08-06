@@ -1,5 +1,7 @@
 
 
+process.env.NODE_ENV='production';
+
 import Main from './../application/Main.server';
 import ReactDOMServer  from 'react-dom/server';
 import React from 'react';
@@ -10,6 +12,7 @@ const {minify} = require('html-minifier');
 
 const server = express();
 const path = require('path');
+
 
 server
     .disable('x-powered-by')//在express中删除x-powered-by

@@ -2,25 +2,30 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore'
-
 import {Route,StaticRouter } from 'react-router-dom';
 import routesConfig from './routes/routesConfig';
-// import App from '../pages/App.js';
+import App from './pages/App.js';
 
-// require('babel-register')({
-// 	ignore: /\/(build|node_modules)\//,
-// 	presets: ['env', 'react-app']
-// })
+require('babel-register')({
+	ignore: /\/(build|node_modules)\//,
+	presets: ['env', 'react-app']
+})
 
-// const Routes = ()=> {
-//     return (
-//       <StaticRouter>
-//          <App>
-//           <div>xxxx</div>
-//         </App>
-//       </StaticRouter>
-//     );
-// }
+const Routes = ()=> {
+    return (
+      <StaticRouter>
+        <App>
+          {routesConfig.map(route => (<Route
+            key={route.path}
+            exact={route.exact}
+            path={route.path}
+            component={route.component}
+            thunk={route.thunk} />))
+          }
+        </App>
+      </StaticRouter>
+    );
+}
 
 const store = configureStore({});
 class Main extends Component {
@@ -29,8 +34,9 @@ class Main extends Component {
 	}
 	render() {
 		return (
-			<Provider  store={store}>
-				<div>xxxxxxx</div>
+			<Provider store={store}>
+				{Routes()}
+				{/* <div>xxxxssxxx</div> */}
 			</Provider>
 		)
 	}

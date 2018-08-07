@@ -10,12 +10,15 @@ const express = require('express');
 const compression = require('compression');
 const {minify} = require('html-minifier');
 
+const renderPage = require('../application/Main.server').renderPage;
+
 const server = express();
 const path = require('path');
 
 const webpack = require('webpack');
 const webpackConfig = require("../../config/webpack.dev");
 const compiler = webpack(webpackConfig);
+
 const webpackDevMiddleware = require('webpack-dev-middleware')(
     compiler,
     {
@@ -36,8 +39,6 @@ server
     .set('views',__dirname+'/views')//设置模板路径，取views变量里的 './views'
     .set('view engine', 'ejs')
     .get('*',function(req,res){
-        res.render('index',{title:'index',render:ReactDOMServer.renderToString(<Main />),dehydratedState:null},function(err,html){
-            res.send(minify(html)) 
-        })
+        return renderPage(req, res);
     });
     module.exports = server;

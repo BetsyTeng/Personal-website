@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux'
 import getCartInfo from './header';
-import style from './style';
+import style from './style.scss';
 import {ChangeSearchSectionState} from "../../actions";
 import BtnMenu from '../BtnMenu/index.jsx';
 import TableWrapper from '../TableWrapper/index.jsx'
